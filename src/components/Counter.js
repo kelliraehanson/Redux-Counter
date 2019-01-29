@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { increment, decrement } from '../actions';
 
+import './Counter.css';
+
 class Counter extends Component {
     incrementIfOdd = () => {
         // Stretch Problem: Implement an increment function that
@@ -20,12 +22,10 @@ class Counter extends Component {
         return (
             <p>
                 Clicked: {this.props.count} times
-                <button onClick={() => /* Fill me in */ }>
-                    +
-                </button>
-                <button onClick={() => /* Fill me in */ }>
-                    -
-                </button>
+                <br></br>
+                <button onClick={() => this.props.increment() }>+ Add</button>
+                <br></br>
+                <button onClick={() => this.props.decrement() }>- Subtract</button>
                  {/* Uncomment these button tags if you got
                 around to implementing the extra credit functions */}
                 {/* <button onClick={this.incrementIfOdd}>
